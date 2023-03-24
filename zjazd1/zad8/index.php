@@ -24,7 +24,6 @@ if(isset($_POST['a']) && isset($_POST['b']) && isset($_POST['c'])) {
     $liczba2 = $_POST['b'];
     $liczba3 = $_POST['c'];
 
-    // Sortowanie od najmniejszej do największej
     if ($liczba1 > $liczba2) {
         $tmp = $liczba1;
         $liczba1 = $liczba2;

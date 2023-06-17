@@ -2,7 +2,7 @@
 require 'lib/functions.php';
 require 'lib/render_functions.php';
 $url = 'admin/add_wallpapers.php';
-if(!is_logged()){
+if(is_logged() == false){
     header('Location: /index.php');
 }
 ?>

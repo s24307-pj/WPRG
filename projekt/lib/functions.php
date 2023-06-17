@@ -19,6 +19,7 @@ function get_connection()
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     return $pdo;
+
 }
 
 /**
@@ -136,7 +137,7 @@ function get_menu($limit = 12)
 {
     $pdo = get_connection();
 
-    $query = 'SELECT `id`,`menu`,`file_name` FROM admin';
+    $query = 'SELECT id,menu,file_name FROM admin';
 
     if ($limit) {
         $query = $query . ' LIMIT :resultLimit';
@@ -233,11 +234,6 @@ function get_users($limit = 12, $from = 0)
 
     return $users;
 }
-
-/**
- * @param $id
- * @return mixed
- */
 function get_wallpaper_count($id){
     $pdo = get_connection();
     $query = 'SELECT COUNT(id) from wallpapers WHERE id_category=:idVal';
@@ -261,18 +257,14 @@ function min_or_max($val, $min, $max)
 {
     return ($val >= $min && $val <= $max);
 }
-
-/**
- * @return bool
- */
 function is_logged(){
-    return isset($_SESSION['id_user']);
+    if(isset($_SESSION['id_user'])){
+        $is_logged = TRUE;
+    }else{
+        $is_logged = FALSE;
+    }
+    return $is_logged;
 }
-
-/**
- * @param $login
- * @return array|false
- */
 function checkLogin($login){
     $pdo = get_connection();
     $query = 'SELECT login FROM users WHERE login=:loginVal';

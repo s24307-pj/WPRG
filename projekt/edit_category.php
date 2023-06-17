@@ -12,7 +12,7 @@ $url ='update_category.php?id='.$_GET['id'];
 <hr>
 <?php echo get_html_admin_menu(get_menu(),is_logged()); ?>
 <?php if(is_logged()){?>
-<h1 class="w-100 text-center my-2">Edytuj kategorię:</h1>
+<h1 class="w-100 text-center">Edytuj kategorię:</h1>
 <?php echo create_html_category($url);?>
 <?php }
 else{

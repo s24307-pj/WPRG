@@ -1,0 +1,50 @@
+*,*::before,*::after{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+.alert{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+}
+.table{
+  overflow-x: scroll;
+}
+a{
+  text-decoration: none;
+}
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-size{
+  width: 300px;
+}
+.card{
+  a{
+    color:black;
+  }
+}
+.small{
+  width: 100px;
+}
+.form-floating,.middle{
+  width: 300px;
+}
+.block{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: red;
+}
+.img{
+  height: 225px; width: 300px; display: block;
+}
+@media (max-width: 576px){
+  .img{
+    width: 200px;
+  }
+}
